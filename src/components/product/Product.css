@@ -1,0 +1,28 @@
+
+.card{
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-img{
+    height: 250px;
+    width: 100%;
+}
+.card-item{
+margin: 10px 10px 0 10px;
+}
+.add-to-cart{
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px ;
+    font-size: 15px;
+    background-color: #FFE0B3;
+    border: none;
+    border-radius: 0 0 5px 5px;
+}
+.add-to-cart:hover{
+    cursor: pointer;
+    background-color:#f8b145;
+}
