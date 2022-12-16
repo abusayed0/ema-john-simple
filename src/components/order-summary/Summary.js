@@ -1,9 +1,7 @@
 import React from 'react';
-import { deleteShoppingCart } from '../../utilities/fakedb';
 import './Summary.css'
 const Summary = (props) => {
-    const { totalAdded,setTotalAdded} = props;
-    // console.log(totalAdded)
+    const { totalAdded,clearCart,children} = props;
     let totalPrice=0
     let totalShipping=0;
     let selected=0;
@@ -17,10 +15,7 @@ const Summary = (props) => {
     let totalTax=totalPrice*0.1;
     totalTax=totalTax.toFixed(2);
     const grandTotal=totalPrice + totalShipping + parseFloat(totalTax);
-    const clearCart=()=>{
-        setTotalAdded([]);
-        deleteShoppingCart();
-    }
+    
     return (
         <div className="cart-summary">
             <h3 className="cart-header">Order Summary</h3>
@@ -33,7 +28,9 @@ const Summary = (props) => {
             </div>
             <div className="cart-btn-container">
                 <button className="clear-btn" onClick={clearCart}>Clear Cart</button>
-                <button className="review-btn">Review Order</button>
+                {
+                    children
+                }
             </div>
         </div>
     );
